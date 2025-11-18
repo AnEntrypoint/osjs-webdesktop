@@ -1,0 +1,8 @@
+node_modules
+dist
+session-store.db
+.vfs
+*.log
+.DS_Store
+.env
+.playwright-mcp
