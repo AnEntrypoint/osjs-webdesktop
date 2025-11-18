@@ -15,7 +15,9 @@ import { createTextEditorApp, createCalculatorApp } from './example-app.js';
 import './index.scss';
 
 const init = () => {
-  const osjs = new Core({}, {});
+  const osjs = new Core({
+    standalone: true
+  }, {});
 
   osjs.register(CoreServiceProvider);
   osjs.register(DesktopServiceProvider);
@@ -29,6 +31,13 @@ const init = () => {
   osjs.register(SessionServiceProvider);
 
   osjs.on('osjs/core:started', () => {
+    const contents = document.querySelector('.osjs-contents');
+    if (contents && !contents.querySelector('.osjs-desktop')) {
+      const desktop = document.createElement('div');
+      desktop.className = 'osjs-desktop';
+      contents.appendChild(desktop);
+    }
+
     const textEditor = createTextEditorApp(osjs);
     const calculator = createCalculatorApp(osjs);
 

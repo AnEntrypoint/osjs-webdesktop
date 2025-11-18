@@ -24,6 +24,8 @@ export const createTextEditorApp = (osjs) => {
         }
       });
 
+      win.render();
+
       const textarea = document.createElement('textarea');
       textarea.style.width = '100%';
       textarea.style.height = '100%';
@@ -34,7 +36,6 @@ export const createTextEditorApp = (osjs) => {
       textarea.value = appState.content || '';
 
       win.$content.appendChild(textarea);
-      win.render();
 
       setTimeout(() => {
         textarea.selectionStart = appState.cursorPosition || 0;
@@ -57,6 +58,8 @@ export const createTextEditorApp = (osjs) => {
           filePath
         }
       });
+
+      win.render();
 
       const textarea = document.createElement('textarea');
       textarea.style.width = '100%';
@@ -98,7 +101,6 @@ export const createTextEditorApp = (osjs) => {
 
       win.$content.appendChild(saveButton);
       win.$content.appendChild(textarea);
-      win.render();
 
       return win;
     }
@@ -150,6 +152,8 @@ export const createCalculatorApp = (osjs) => {
           history: []
         }
       });
+
+      win.render();
 
       const display = document.createElement('input');
       display.type = 'text';
@@ -227,7 +231,6 @@ export const createCalculatorApp = (osjs) => {
 
       win.$content.appendChild(display);
       win.$content.appendChild(buttonGrid);
-      win.render();
 
       return win;
     }

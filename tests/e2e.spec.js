@@ -2,10 +2,24 @@ const { test, expect } = require('@playwright/test');
 
 const BASE_URL = 'http://localhost:8000';
 
+async function loginToOSjs(page) {
+  try {
+    const loginForm = await page.locator('#osjs-login').first();
+    if (await loginForm.isVisible({ timeout: 2000 })) {
+      await page.fill('input[name="username"]', 'demo');
+      await page.fill('input[name="password"]', 'demo');
+      await page.click('input[type="submit"]');
+      await page.waitForTimeout(2000);
+    }
+  } catch (e) {
+  }
+}
+
 test.describe('OS.js End-to-End Tests', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto(BASE_URL);
+    await loginToOSjs(page);
   });
 
   test('should load the main page', async ({ page }) => {
