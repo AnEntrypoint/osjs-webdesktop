@@ -8,6 +8,7 @@ const {
 } = require('@osjs/server');
 
 const config = require('./config.js');
+const SessionServiceProvider = require('./session-provider.js');
 
 const osjs = new Core(config, {});
 
@@ -16,6 +17,7 @@ osjs.register(PackageServiceProvider);
 osjs.register(VFSServiceProvider);
 osjs.register(AuthServiceProvider);
 osjs.register(SettingsServiceProvider);
+osjs.register(SessionServiceProvider);
 
 const shutdown = signal => (error) => {
   if (error instanceof Error) {
