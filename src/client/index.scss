@@ -46,3 +46,113 @@ body, html {
   border: 1px solid #666;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.mobile-carousel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #1a1a1a;
+  border-top: 2px solid #333;
+  z-index: 10000;
+  display: none;
+}
+
+.mobile-carousel-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-carousel-icons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+  min-width: min-content;
+}
+
+.mobile-carousel-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  height: 100%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.mobile-carousel-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-carousel-icon.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-carousel-icon .icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 4px;
+  transition: transform 0.2s ease;
+}
+
+.mobile-carousel-icon:active .icon-circle {
+  transform: scale(0.9);
+}
+
+.mobile-carousel-icon .icon-label {
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70px;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .osjs-panel {
+    height: 48px !important;
+  }
+
+  .osjs-contents {
+    top: 48px;
+    bottom: 80px;
+  }
+
+  .osjs-desktop {
+    bottom: 0;
+  }
+
+  .osjs-window {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .osjs-window-button {
+    display: none !important;
+  }
+
+  .mobile-carousel {
+    display: block;
+  }
+
+  body {
+    touch-action: pan-x pan-y;
+  }
+}
