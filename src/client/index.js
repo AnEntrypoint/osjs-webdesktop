@@ -11,6 +11,7 @@ import { PanelServiceProvider } from '@osjs/panels';
 import { GUIServiceProvider } from '@osjs/gui';
 import { DialogServiceProvider } from '@osjs/dialogs';
 import { SessionServiceProvider } from './session-provider.js';
+import { MobileServiceProvider } from './mobile-provider.js';
 import { createTextEditorApp, createCalculatorApp } from './example-app.js';
 import './index.scss';
 
@@ -29,6 +30,7 @@ const init = () => {
   osjs.register(DialogServiceProvider);
   osjs.register(GUIServiceProvider);
   osjs.register(SessionServiceProvider);
+  osjs.register(MobileServiceProvider);
 
   osjs.on('osjs/core:started', () => {
     const contents = document.querySelector('.osjs-contents');

@@ -46,3 +46,56 @@ body, html {
   border: 1px solid #666;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+  .osjs-contents {
+    top: 0;
+    bottom: 48px;
+  }
+
+  .osjs-panel {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 48px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .osjs-panel > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .osjs-window {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 48px !important;
+    width: 100% !important;
+    height: calc(100% - 48px) !important;
+    min-width: 100% !important;
+    min-height: calc(100% - 48px) !important;
+    max-width: 100% !important;
+    max-height: calc(100% - 48px) !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  .osjs-window[data-minimized="true"] {
+    display: none !important;
+  }
+
+  .osjs-window-button[data-action="minimize"] {
+    display: none !important;
+  }
+
+  .osjs-window-button[data-action="maximize"] {
+    display: none !important;
+  }
+}
