@@ -16,14 +16,18 @@ export class SessionServiceProvider {
   }
 
   async start() {
-    const tray = this.core.make('osjs/tray');
+    try {
+      const tray = this.core.make('osjs/tray');
 
-    if (tray) {
-      tray.create({
-        title: 'Session Manager',
-        icon: 'system-save',
-        onclick: () => this.openSessionMenu()
-      });
+      if (tray) {
+        tray.create({
+          title: 'Session Manager',
+          icon: 'system-save',
+          onclick: () => this.openSessionMenu()
+        });
+      }
+    } catch (err) {
+      console.warn('Tray not available:', err.message);
     }
 
     this.core.on('osjs/core:started', () => {

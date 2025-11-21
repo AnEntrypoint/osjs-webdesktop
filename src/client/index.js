@@ -33,13 +33,6 @@ const init = () => {
   osjs.register(MobileServiceProvider);
 
   osjs.on('osjs/core:started', () => {
-    const contents = document.querySelector('.osjs-contents');
-    if (contents && !contents.querySelector('.osjs-desktop')) {
-      const desktop = document.createElement('div');
-      desktop.className = 'osjs-desktop';
-      contents.appendChild(desktop);
-    }
-
     const textEditor = createTextEditorApp(osjs);
     const calculator = createCalculatorApp(osjs);
 
