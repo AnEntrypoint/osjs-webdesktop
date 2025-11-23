@@ -5,7 +5,7 @@ session-store.db
 vfs
 *.log
 .DS_Store
-.env
 .playwright-mcp
 test-results
 sessions
+config.bat
