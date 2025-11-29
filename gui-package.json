@@ -1,0 +1,33 @@
+{
+  "name": "@sequential-ecosystem/desktop",
+  "version": "1.0.0",
+  "description": "Sequential Desktop - Full OS environment with content-addressable filesystem",
+  "private": true,
+  "main": "src/server/index.js",
+  "scripts": {
+    "setup": "./setup-gui.sh",
+    "start": "node src/server/index.js",
+    "dev": "DEBUG=1 node src/server/index.js"
+  },
+  "keywords": [
+    "sequential",
+    "desktop",
+    "osjs",
+    "statekit",
+    "content-addressable",
+    "filesystem"
+  ],
+  "dependencies": {
+    "@osjs/server": "^3.0.0",
+    "@osjs/common": "^3.0.0",
+    "@sequential-ecosystem/sequential-machine": "file:../sequential-machine",
+    "body-parser": "^1.19.0",
+    "chokidar": "^3.4.0",
+    "fs-extra": "^10.0.0",
+    "filehound": "^1.17.0",
+    "hyperapp": "^1.2.10"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
