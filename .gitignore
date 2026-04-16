@@ -27,8 +27,6 @@ package-lock.json
 **/*-key.json
 
 # Environment files
-.env
-.env.*
 
 # Test crawl outputs
 test-crawl/
@@ -67,3 +65,4 @@ backup/
 IMPLEMENTATION_SUMMARY.md
 glootie/.caveats.txt
 glootie/.mcp-file-analysis-metadata.json
+config.bat
