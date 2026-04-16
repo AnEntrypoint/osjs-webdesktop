@@ -27,8 +27,6 @@ package-lock.json
 **/*-key.json
 
 # Environment files
-.env
-.env.*
 
 # Test crawl outputs
 test-crawl/
@@ -45,7 +43,6 @@ eval/*.json
 
 # IDE and OS files
 .DS_Store
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -67,3 +64,4 @@ backup/
 IMPLEMENTATION_SUMMARY.md
 glootie/.caveats.txt
 glootie/.mcp-file-analysis-metadata.json
+config.bat
